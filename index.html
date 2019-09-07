@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather APP</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>What's the weather like today?</h1>
+      <div class="enter-your-city">
+        <form>
+          <input
+            id="your-city"
+            class="toggle"
+            type="text"
+            name="input"
+            placeholder="Enter Your City"
+            onfocus="this.placeholder=''"
+            onblur="this.placeholder='Enter Your City'"
+          />
+        </form>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- current information -->
+      <div class="current-dates">
+        <!-- info first row -->
+        <div class="info-first-row">
+          <canvas class="icon" width="128" height="128"></canvas>
+
+          <!-- temperature -->
+          <div class="temperature-display">
+            <div class="temperature-number"></div>
+            <div class="imperial-degree">°F</div>
+            <!-- switch/slide -> button w3schools-->
+            <div class="slideBtn">
+              <label class="switch">
+                <input type="checkbox" class="toggle" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <div class="location-timezone">City/Country</div>
+        </div>
+        <!-- info first row ending -->
+
+        <!-- info second row -->
+        <div class="info-second-row">
+          <div class="wind-humidity">
+            <div class="wind-container">
+              <div class="wind-speed">Wind</div>
+              <div class="wind"></div>
+            </div>
+            <div class="humidity-container">
+              <div class="humidity">Humidity</div>
+              <div class="humidity-scale"></div>
+            </div>
+          </div>
+          <div class="daytime-weather">
+            <div class="day-time">
+              <div class="day">Day</div>
+              <div class="time">Time</div>
+            </div>
+            <div class="weather-description">Description</div>
+          </div>
+        </div>
+        <!-- info second row ending -->
+      </div>
+      <!-- current information ending -->
+
+      <!-- weather forecast -->
+      <div class="five-days-forecast">
+        <table>
+          <tr>
+            <th></th>
+            <th>Today</th>
+            <th>2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+            <th>5th</th>
+          </tr>
+          <tr>
+            <td>High</td>
+            <td class="max-temp">temp</td>
+            <td class="max-temp">temp</td>
+            <td class="max-temp">temp</td>
+            <td class="max-temp">temp</td>
+            <td class="max-temp">temp</td>
+          </tr>
+          <tr>
+            <td>Low</td>
+            <td class="min-temp">temp</td>
+            <td class="min-temp">temp</td>
+            <td class="min-temp">temp</td>
+            <td class="min-temp">temp</td>
+            <td class="min-temp">temp</td>
+          </tr>
+        </table>
+      </div>
+      <!-- five days forecast ending -->
+    </div>
+    <!-- container ending -->
+
+    <!-- credits -->
+    <a href="https://darksky.net/poweredby" class="darksky-credit"
+      >Powered By Dark Sky</a
+    >
+    <!-- script -->
+    <script src="skycons.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
