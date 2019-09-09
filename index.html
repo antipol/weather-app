@@ -12,12 +12,10 @@
     <header>
       <h1>What's the weather like today?</h1>
       <div class="enter-your-city">
-        <form>
+        <form action="">
           <input
-            id="your-city"
-            class="toggle"
+            id="search-city"
             type="text"
-            name="input"
             placeholder="Enter Your City"
             onfocus="this.placeholder=''"
             onblur="this.placeholder='Enter Your City'"
@@ -26,17 +24,18 @@
       </div>
     </header>
 
-    <div class="container">
+    <div class="weather-container">
       <!-- current information -->
       <div class="current-dates">
         <!-- info first row -->
+
         <div class="info-first-row">
           <canvas class="icon" width="128" height="128"></canvas>
 
           <!-- temperature -->
           <div class="temperature-display">
-            <div class="temperature-number"></div>
-            <div class="imperial-degree">°F</div>
+            <div class="imperial">°<span>F</span></div>
+            <div class="celsius">°<span>C</span></div>
             <!-- switch/slide -> button w3schools-->
             <div class="slideBtn">
               <label class="switch">
@@ -45,7 +44,8 @@
               </label>
             </div>
           </div>
-          <div class="location-timezone">City/Country</div>
+          <div class="city">City</div>
+          <div class="country">Country</div>
         </div>
         <!-- info first row ending -->
 
@@ -54,11 +54,10 @@
           <div class="wind-humidity">
             <div class="wind-container">
               <div class="wind-speed">Wind</div>
-              <div class="wind"></div>
+              <div class="wind-unit"></div>
             </div>
             <div class="humidity-container">
               <div class="humidity">Humidity</div>
-              <div class="humidity-scale"></div>
             </div>
           </div>
           <div class="daytime-weather">
@@ -78,27 +77,47 @@
         <table>
           <tr>
             <th></th>
-            <th>Today</th>
-            <th>2nd</th>
-            <th>3rd</th>
-            <th>4th</th>
-            <th>5th</th>
+            <th class="day">Today</th>
+            <th class="day">2nd</th>
+            <th class="day">3rd</th>
+            <th class="day">4th</th>
+            <th class="day">5th</th>
           </tr>
           <tr>
             <td>High</td>
-            <td class="max-temp">temp</td>
-            <td class="max-temp">temp</td>
-            <td class="max-temp">temp</td>
-            <td class="max-temp">temp</td>
-            <td class="max-temp">temp</td>
+            <td>
+              <span class="max-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="max-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="max-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="max-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="max-temp">xy</span>°<span class="fToC">C</span>
+            </td>
           </tr>
           <tr>
             <td>Low</td>
-            <td class="min-temp">temp</td>
-            <td class="min-temp">temp</td>
-            <td class="min-temp">temp</td>
-            <td class="min-temp">temp</td>
-            <td class="min-temp">temp</td>
+            <td>
+              <span class="min-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="min-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="min-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="min-temp">xy</span>°<span class="fToC">C</span>
+            </td>
+            <td>
+              <span class="min-temp">xy</span>°<span class="fToC">C</span>
+            </td>
           </tr>
         </table>
       </div>

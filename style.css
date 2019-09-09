@@ -35,7 +35,7 @@ h1 {
 }
 
 /* search-box */
-#your-city {
+#search-city {
   background: rgba(220, 160, 140, 0.5);
   color: white;
   font-size: 1.2rem;
@@ -56,7 +56,7 @@ input:focus {
 }
 
 /* main information box */
-.container {
+.weather-container {
   background: rgba(220, 160, 140, 0.5);
   width: 75%;
   height: 550px;
@@ -148,7 +148,8 @@ input:checked + .slider:before {
 .day {
   padding-right: 8px;
 }
-.imperial-degree {
+.imperial,
+.celsius {
   padding-right: 20px;
 }
 
