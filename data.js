@@ -1,3 +1,6 @@
+//NEEDED for currentTime.textContent
+// import time from "./date.js"
+
 const key = "&appid=7bf8fef284b729c9be430f727449ce1c";
 
 const icon = document.querySelector(".icon");
@@ -5,7 +8,8 @@ const fahrenheit = document.querySelector(".imperial");
 const celsius = document.querySelector(".celsius");
 const city = document.querySelector(".city");
 const country = document.querySelector(".country");
-const wind = document.querySelector(".wind");
+//In index.html no class called "wind", change to ".wind-unit"
+const wind = document.querySelector(".wind-unit");
 const humidity = document.querySelector(".humidity");
 const currentTime = document.querySelector(".time");
 const description = document.querySelector(".weather-description");
@@ -27,9 +31,14 @@ export function getPosition() {
     write(locationArr);
   });
 }
+
+
+//You can delete this console log of locationArr
 console.log(locationArr);
 
 // ---------------------------------------------------------
+
+
 export function search(e) {
   e.preventDefault();
 
@@ -39,9 +48,13 @@ export function search(e) {
     .then(response => {
       return response.json(); // transform the data into json
     })
-    .then((
-      data // get data
-    ) => console.log(data));
+
+    // //not necessary
+    // .then((
+    //   data // get data
+    // ) => console.log(data));
+
+
 }
 
 // ----------------------------------------------------------
@@ -67,7 +80,11 @@ export function write(locationArr) {
         maxDom[i].textContent = maxTemp[i].main.temp_max;
       }
 
+
+      //delete this console log
       console.log(data);
+
+
       // connect the weather info of the api to the DOM Elements :))
       icon.src = `http://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`;
       fahrenheit.textContent = (
@@ -78,6 +95,7 @@ export function write(locationArr) {
       country.textContent = data.city.country;
       wind.textContent = data.list[0].wind.speed;
       humidity.textContent = data.list[0].main.humidity;
+      //get time in date.js ans export / import that function before using it
       currentTime.textContent = time;
       description.textContent = data.list[0].weather[0].description;
     });
